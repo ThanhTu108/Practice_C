@@ -1,0 +1,3 @@
+D:\APP\CMake\bin\cmake.exe -E rm -f CMakeFiles\bai5.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\bai5.dir/objects.a @CMakeFiles\bai5.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -Wl,--whole-archive CMakeFiles\bai5.dir/objects.a -Wl,--no-whole-archive -o D:\Desktop\hoc\Tu\Training_lab\Practice_c\String\Bai5\bin\bai5.exe -Wl,--out-implib,D:\Desktop\hoc\Tu\Training_lab\Practice_c\String\Bai5\bin\libbai5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\bai5.dir\linkLibs.rsp

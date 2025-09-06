@@ -1,0 +1,4 @@
+D:/Desktop/hoc/Tu/Training_lab/Practice_c/String/LT/Build/CMakeFiles/main.dir
+D:/Desktop/hoc/Tu/Training_lab/Practice_c/String/LT/Build/CMakeFiles/run.dir
+D:/Desktop/hoc/Tu/Training_lab/Practice_c/String/LT/Build/CMakeFiles/edit_cache.dir
+D:/Desktop/hoc/Tu/Training_lab/Practice_c/String/LT/Build/CMakeFiles/rebuild_cache.dir
