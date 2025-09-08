@@ -1,0 +1,4 @@
+D:/Desktop/hoc/Tu/Training_lab/Practice_c/String/Bai6/build/CMakeFiles/bai6.dir
+D:/Desktop/hoc/Tu/Training_lab/Practice_c/String/Bai6/build/CMakeFiles/run.dir
+D:/Desktop/hoc/Tu/Training_lab/Practice_c/String/Bai6/build/CMakeFiles/edit_cache.dir
+D:/Desktop/hoc/Tu/Training_lab/Practice_c/String/Bai6/build/CMakeFiles/rebuild_cache.dir
