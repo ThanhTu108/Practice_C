@@ -23,27 +23,27 @@ void print_array(int arr[], int numer_of_array)
         printf("Ayyar[%d]: %d \n", i, arr[i]);
     }
 }
-int find_prime(int* n)
+int find_prime(int n)
 {
-    if(*n<2)
+    if(n<2)
     {
         return 0;
     }
-    for(int i = 2; i<=sqrt(*n); i++)
+    for(int i = 2; i<=sqrt(n); i++)
     {
-        if(*n%i == 0)
+        if(n%i == 0)
         {
             return 0;
         }
     }
-    return *n;
+    return 1;
 }
 void find_prime_array(int arr[], int number_of_array)
 {
     printf("Prime: \n");
     for(int i =0; i < number_of_array; i++)
     {
-        if (find_prime(&arr[i])!=0)
+        if (find_prime(arr[i])!=0)
         {
             printf("Prime arr[%d]: %d\n", i, arr[i]);
         }
