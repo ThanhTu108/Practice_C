@@ -28,9 +28,8 @@ void Arr_print(int arr[], int number)
         printf("Phan tu thu %d: %d\n", i+1, *(pt+i));
     }
 }
-void Arr_arrange(int arr[], int number)
+void Arr_arrange(int* pt, int number)
 {
-    int* pt = arr;
     for(int i = 0; i < number; i++)
     {
         for(int j = 0; j < number-i-1; j++)
