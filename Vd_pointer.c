@@ -43,13 +43,34 @@ void Arr_arrange(int arr[], int number)
     }
 }
 
+
+void pointer_get(int* pt, int* number)
+{
+    printf("Enter number of array: ");
+    scanf("%d", number);
+    for(int i = 0; i<*number; i++)
+    {
+        printf("Enter %d elements: ", i+1);
+        scanf("%d", pt+i);
+    }
+}
+void pointer_print(int* pt, int number)
+{
+    for (int i = 0; i < number; i++)
+    {
+        printf("Phan tu thu %d: %d\n", i+1, *(pt+i));
+    }
+}
 // void Arr_
 int main()
 {
     int arr[100];
     int num = 0;
-    Arr_get(arr, &num);
+    // Arr_get(arr, &num);
+    pointer_get(arr, &num);
     Arr_arrange(arr, num);
-    Arr_print(arr, num);
+
+    // Arr_print(arr, num);
+    pointer_print(arr, num);
     return 0;
 }
