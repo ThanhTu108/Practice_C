@@ -1,6 +1,14 @@
 #include <stdio.h>
 //using pointer to scan array from keyboard (10 element)
 //using pointer to arrange array from small to large
+
+void swap_arr(int*a, int* b)
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
 void Arr_get(int arr[], int* number)
 {
     printf("Enter number of array: ");
@@ -20,14 +28,6 @@ void Arr_print(int arr[], int number)
         printf("Phan tu thu %d: %d\n", i+1, *(pt+i));
     }
 }
-void swap_arr(int*a, int* b)
-{
-    int temp;
-    temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
 void Arr_arrange(int arr[], int number)
 {
     int* pt = arr;
