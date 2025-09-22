@@ -9,6 +9,7 @@ void enter_number(int* a, int*b)
 int* sum(int* a, int* b)
 {
     static int sum;
+    sum = 0;
     sum = *a + *b;
     return &sum;
 }
