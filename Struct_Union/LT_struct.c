@@ -40,20 +40,21 @@ void student_get_all_1(student_t* sv, int* num)
     {
         char* pos;
         printf("Name[%d]: ", i);
-        fgets((sv+i)->name, sizeof((sv+i)->name), stdin);
-        if((pos = strchr((sv+i)->name, '\n')) != NULL)
+        fgets(sv->name, sizeof(sv->name), stdin);
+        if((pos = strchr(sv->name, '\n')) != NULL)
         {
             *pos = '\0';
         }
         printf("Class: ");
-        scanf("%d", &((sv+i)->class));
+        scanf("%d", &(sv->class));
         fflush(stdin);
         printf("ID: ");
-        fgets((sv+i)->student_id, sizeof((sv+i)->student_id), stdin);
-        if((pos = strchr((sv+i)->student_id, '\n')) != NULL)
+        fgets(sv->student_id, sizeof(sv->student_id), stdin);
+        if((pos = strchr(sv->student_id, '\n')) != NULL)
         {
             *pos = '\0';
         }
+        sv++;
     }
 }
 
@@ -64,7 +65,8 @@ void student_get_all_2(student_t* sv, int*num)
     fflush(stdin);
     for(int i = 0; i < *num; i++)
     {
-        student_get_1(sv+i);
+        student_get_1(sv);
+        sv++;
     }
 }
 
@@ -79,7 +81,7 @@ int main()
 {
     student_t sv[100];
     int num = 1;
-    student_get_all_2(sv, &num);
+    student_get_all_1(sv, &num);
     print_student_all(sv, num);
     return 0;
 }
