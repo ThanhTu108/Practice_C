@@ -18,6 +18,20 @@ void Arr_Print(int* pt, int num)
         printf("Arr[%d]: %d\n", i+1, *(pt+i));
     }
 }
+void Arr_reverse(int* pt, int num)
+{
+    int left = 0;
+    int right = num - 1;
+    while(left < right)
+    {
+        int temp;
+        temp = *(pt+left);
+        *(pt+left) = *(pt+right);
+        *(pt+right) = temp;
+        left++;
+        right--;
+    }
+}
 void swap(int* a, int* b)
 {
     int temp;
@@ -58,6 +72,7 @@ int main()
     int num;
     Arr_get(arr, &num);
     arr_increase(arr, num);
+    Arr_reverse(arr, num);
     Arr_Print(arr, num);
     arr_decrease(arr, num);
     Arr_Print(arr, num);
