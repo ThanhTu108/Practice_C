@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <string.h>
+
+#pragma pack(1)
+// #pragma pack(1) 1 byte 1 
 typedef struct 
 {
     char name[30];
     int class;
     char student_id[10];
 } student_t; 
+#pragma pack()
+
+
 //value use: '.'
 //pointer use:  '->'
 
@@ -80,6 +86,7 @@ void print_student_all(student_t* sv, int num)
 int main()
 {
     student_t sv[100];
+    printf("size of struct student_t: %d\n",sizeof(student_t));
     int num = 1;
     student_get_all_1(sv, &num);
     print_student_all(sv, num);
