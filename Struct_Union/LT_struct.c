@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <string.h>
+
+#pragma pack(1)
+// #pragma pack(1) 1 byte 1 
 typedef struct 
 {
     char name[30];
     int class;
     char student_id[10];
 } student_t; 
+#pragma pack()
+
+
 //value use: '.'
 //pointer use:  '->'
 
@@ -40,20 +46,21 @@ void student_get_all_1(student_t* sv, int* num)
     {
         char* pos;
         printf("Name[%d]: ", i);
-        fgets((sv+i)->name, sizeof((sv+i)->name), stdin);
-        if((pos = strchr((sv+i)->name, '\n')) != NULL)
+        fgets(sv->name, sizeof(sv->name), stdin);
+        if((pos = strchr(sv->name, '\n')) != NULL)
         {
             *pos = '\0';
         }
         printf("Class: ");
-        scanf("%d", &((sv+i)->class));
+        scanf("%d", &(sv->class));
         fflush(stdin);
         printf("ID: ");
-        fgets((sv+i)->student_id, sizeof((sv+i)->student_id), stdin);
-        if((pos = strchr((sv+i)->student_id, '\n')) != NULL)
+        fgets(sv->student_id, sizeof(sv->student_id), stdin);
+        if((pos = strchr(sv->student_id, '\n')) != NULL)
         {
             *pos = '\0';
         }
+        sv++;
     }
 }
 
@@ -64,7 +71,8 @@ void student_get_all_2(student_t* sv, int*num)
     fflush(stdin);
     for(int i = 0; i < *num; i++)
     {
-        student_get_1(sv+i);
+        student_get_1(sv);
+        sv++;
     }
 }
 
@@ -78,8 +86,9 @@ void print_student_all(student_t* sv, int num)
 int main()
 {
     student_t sv[100];
+    printf("size of struct student_t: %d\n",sizeof(student_t));
     int num = 1;
-    student_get_all_2(sv, &num);
+    student_get_all_1(sv, &num);
     print_student_all(sv, num);
     return 0;
 }
