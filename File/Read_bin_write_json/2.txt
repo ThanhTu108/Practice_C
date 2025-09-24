@@ -1,0 +1,21 @@
+Xử lý file với Cấu trúc file:
+[Header][Record 1][Record 2]...[Record N]
+- Header:
+    + 4 byte, Id file
+    + 2 byte, file version cho biết phiên bản cấu trúc file.
+    + 4 byte, số lượng bản ghi dữ liệu thời tiết trong file.
+- Data Record:
+    + 4 byte, Mã cảm biến.
+    + 1 byte, Trạng thái pin (bình thường, yếu, nguy cấp).
+    + 4 byte, Thời gian đo (dạng UNIX timestamp).
+    + 8 byte, Vĩ độ GPS.
+    + 8 byte, Kinh độ GPS.
+    + 4 byte, Nhiệt độ.
+    + 4 byte, Độ ẩm.
+    + 4 byte, Áp suất.
+    + 2 byte, Nồng độ CO2.
+    + 4 byte, Tốc độ gió.
+    + 2 byte, Hướng gió.
+    + 4 byte, Lượng mưa.
+    + 4 byte, Chỉ số UV.
+    + 4 byte, Cường độ ánh sáng.
