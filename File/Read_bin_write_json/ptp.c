@@ -68,7 +68,7 @@ int main()
     s_header_t header;
     printf("%d\n", sizeof(s_weatherRecord_t));
     s_weatherRecord_t* record;
-    char* path = "D:/Desktop/hoc/Tu/Training_lab/C/Project/project2_thanhtu/weather_data.bin";
+    char* path = "D:/Desktop/hoc/Tu/Training_lab/Practice_c/File/Read_bin_write_json/weather_data.bin";
     if(read_file_bin(path, &header, &record)) 
     {
         printf("First record id=%u\n", record[0].sensor_id);
