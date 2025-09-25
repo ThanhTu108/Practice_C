@@ -34,7 +34,7 @@ typedef struct
 #pragma pack()
 //64byte: 57+1+7padding
 
-int read_header(const char* path, s_header_t* header)
+void read_header(const char* path, s_header_t* header)
 {
     FILE* f = fopen(path, "rb");
 
@@ -42,16 +42,14 @@ int read_header(const char* path, s_header_t* header)
     {
         printf("Can not open file\n");
         fclose(f);
-        return 0;
     }
     fread(header, sizeof(s_header_t), 1, f);
     printf("Header: id=%d, version=%d, record_count=%d\n",
            header->id_file, header->version, header->number_record);
     fclose(f);
-    return 1;
 }
 
-int read_record(const char* path, s_header_t header, s_weatherRecord_t* record)
+void read_record(const char* path, s_header_t header, s_weatherRecord_t* record)
 {
     FILE* f = fopen(path, "rb");
 
@@ -59,13 +57,11 @@ int read_record(const char* path, s_header_t header, s_weatherRecord_t* record)
     {
         printf("Can not open file\n");
         fclose(f);
-        return 0;
     }
     fseek(f, sizeof(s_header_t), SEEK_SET);
     int n = fread(record, sizeof(s_weatherRecord_t), header.number_record, f);
     printf("Read %d records\n", n);
     fclose(f);
-    return 1;
 }
 
 void write_json(const char* path, s_header_t header, s_weatherRecord_t* record)
@@ -114,11 +110,10 @@ void write_json(const char* path, s_header_t header, s_weatherRecord_t* record)
 int main()
 {
     s_header_t header;
-    char* path_bin = "D:/Desktop/hoc/Tu/Training_lab/Practice_c/File/Read_bin_write_json/weather_data.bin";
+    char* path_bin = "../weather_data.bin";
     char* path_json = "../weather_record.json";
 
-    if (!read_header(path_bin, &header))
-        return 0;
+    read_header(path_bin, &header);
 
     s_weatherRecord_t* records = malloc(header.number_record * sizeof(s_weatherRecord_t));
     if (!records) {
@@ -126,10 +121,9 @@ int main()
         return 0;
     }
 
-    if (read_record(path_bin, header, records)) {
-        printf("First record id=%u, battery=%u\n",
-               records[0].sensor_id, records[0].baterry);
-    }
+    read_record(path_bin, header, records);
+    printf("First record id=%u, battery=%u\n",
+            records[0].sensor_id, records[0].baterry);
     write_json(path_json, header, records);
     free(records);
     return 0;
