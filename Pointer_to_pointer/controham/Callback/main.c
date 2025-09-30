@@ -5,7 +5,7 @@
 
 void uart_handler(char* data, int len)
 {
-    printf("Data: %s\n", data);
+    printf("Data: %s\n, len: %d\n", data, len);
     if(strstr(data, "ON"))
     {
         printf("On led\n");
