@@ -1,0 +1,3 @@
+STT    Id         Name                 Age        Sex        Math     Phys     Chem     AVR
+1      1          tu a                 10         nam        1.00     1.00     1.00     1.00    
+2      2          tu                   10         nam        2.00     2.00     2.00     2.00    
