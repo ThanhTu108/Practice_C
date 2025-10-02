@@ -17,16 +17,19 @@ struct Info_t
 
 typedef struct Info_t* (*Get_func)(struct Info_t*, int*);
 typedef void(*Active_Func)(struct Info_t*, int);
+typedef struct Info_t* (*File_func)(const char*,struct Info_t*, int);
 struct Func
 {
     Get_func get;
     Active_Func print;
     Active_Func sort_avr;
     Active_Func sort_name;
+    File_func read_file;
 };
 
-struct Info_t* std_get(struct Info_t* sv, int*);
+struct Info_t* std_get(struct Info_t* sv, int* num);
 void std_print(struct Info_t* sv, int num);
 void std_sort_avr(struct Info_t* sv, int num);
 void std_sort_name(struct Info_t* sv, int num);
+struct Info_t* read_file(const char* path, struct Info_t* sv, int num);
 #endif 

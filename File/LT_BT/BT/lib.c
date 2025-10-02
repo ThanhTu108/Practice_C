@@ -85,10 +85,23 @@ int cmp_name(const void* ptr1, const void* ptr2)
 
     return strcmp(last1, last2);
 }
+
 void std_sort_name(struct Info_t* sv, int num)
 {
     qsort(sv, num, sizeof(struct Info_t), cmp_name);
 }
 
+
+struct Info_t* read_file(const char* path, struct Info_t* sv, int num)
+{
+    FILE* f = fopen(path, "a+");
+    if(!f)
+    {
+        printf("Can not allocate memory!!!\n");
+        return NULL;
+    }
+    
+
+}
 
 
