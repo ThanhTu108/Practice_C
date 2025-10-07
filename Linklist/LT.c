@@ -10,11 +10,19 @@ int main()
     };
     
     head = create_node(1);
-    pushFront(&head, 2);
-    push_at(head, 3, 2);
-    push_at(head, 4, 2);
     pushBack(&head, 101);
+    pushBack(&head, 101);
+    pushBack(&head, 101);
+    pushBack(&head, 10);
+    insert(&head, 100, 3);
+    // insert(&head, 100, 0);
+    // insert(&head, 4, 2);
+    
+    // popFront(&head);
     // removeHead(&head);
+    // popBack(&head);
+    erase(&head, 0);
+    erase(&head, 4);
     f.print_node(head);
     return 0;
 }

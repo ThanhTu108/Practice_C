@@ -15,9 +15,14 @@ struct func
 
 void printNode(struct Node_t* node);
 struct Node_t* create_node(int data);
+
 void pushFront(struct Node_t** head, int data);
-bool push_at(struct Node_t* head, int data, int pos);
+void insert(struct Node_t** head, int data, int pos);
 void pushBack(struct Node_t** head, int data);
+void popFront(struct Node_t** head);
+void popBack(struct Node_t** head);
+void erase(struct Node_t** head, int pos);
+void push_at(struct Node_t* head, int data, int pos);
 
 void removeHead(struct Node_t** head);
 #endif // __LIST_H__
