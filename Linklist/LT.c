@@ -7,10 +7,12 @@ int main()
     struct func f =
     {
         .print_node = printNode,
+        .pop_Back = popBack,
+        .pop_Front = popFront,
     };
     
     head = create_node(1);
-    pushBack(&head, 101);
+    f.push_Back(&head, 101);
     pushBack(&head, 101);
     pushBack(&head, 101);
     pushBack(&head, 10);
