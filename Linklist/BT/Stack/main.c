@@ -82,7 +82,7 @@ int main()
                 break;
             case 3:
                 printf("Top: %d\n", top(st));
-                break;
+                break;  
             case 4:
                 printf("Size: %d\n", size(st));
                 break;
