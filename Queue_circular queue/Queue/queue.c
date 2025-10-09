@@ -1,5 +1,6 @@
 #include "queue.h"
 #include <stdbool.h>
+#include <stdlib.h>
 struct Queue_t* create_queue(int capacity)
 {
     struct Queue_t* new_queue = (struct Queue_t*)malloc(sizeof(struct Queue_t));
@@ -17,7 +18,8 @@ static bool isEmpty(struct Queue_t* queue)
 
 static bool isFull(struct Queue_t* queue)
 {
-    return (queue->rear+1 == queue->capacity);
+    // return (queue->rear+1 == queue->capacity);
+    return (queue->size_used == queue->capacity);
 }
 int en_queue(struct Queue_t* queue, int data)
 {   
@@ -26,7 +28,8 @@ int en_queue(struct Queue_t* queue, int data)
         // printf("Queue is full");
         return -1;
     }
-    queue->rear++;
+    // queue->rear++;
+    queue->rear = (queue->rear + 1) % (queue->capacity);
     queue->arr[queue->rear] = data;
     // *(queue->arr + queue->rear) = data;
     queue->size_used++;
@@ -41,7 +44,8 @@ int de_queue(struct Queue_t* queue, int* data)
         return - 1;
     }
     *data = queue->arr[queue->front];
-    queue->front++;
+    // queue->front++;
+    queue->front = (queue->front + 1) % (queue->capacity);
     queue->size_used--;
     return 0;
 }
