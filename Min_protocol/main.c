@@ -48,9 +48,8 @@ void* thread_1(void* arg)
             data_send.char_send = min_send[i];
             // printf("%d  ", data_send.char_send);
             data_send.is_send = true;
-            sleep(1);
+            usleep(10000);
         }
-        
     }
 }
 
