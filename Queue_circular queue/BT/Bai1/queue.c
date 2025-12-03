@@ -5,7 +5,7 @@ struct Queue_t* create_queue(int capacity)
 {
     struct Queue_t* newqueue =(struct Queue_t*)malloc(sizeof(struct Queue_t));
     newqueue->front = 0;
-    newqueue->rear = -1;
+    newqueue->rear = -1; 
     newqueue->size_use = 0;
     newqueue->capacity = capacity;
     newqueue->arr = (int*)malloc(capacity * sizeof(int));
