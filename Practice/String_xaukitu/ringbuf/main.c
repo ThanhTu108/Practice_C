@@ -5,11 +5,18 @@ int main()
 {
     struct ringbuf* ring;
     int arr[10] = {0};
-    ring = create_ring(4);
+    struct ring_func f = 
+    {
+        .cre = create_ring,
+        .get = get_ring,
+        .write = write_ring,
+    };
+    ring = f.cre(4);
+
     for(int i = 0; i < 10; i++)
     {
-        write_ring(ring, i);
-        get_ring(ring, &arr[i]);
+        f.write(ring, i);
+        f.get(ring, &arr[i]);
     }
     for(int i = 0; i < 10; i++)
     {
