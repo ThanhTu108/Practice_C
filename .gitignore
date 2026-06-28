@@ -61,4 +61,8 @@ dkms.conf
 *.json
 build
 
-.gitignore
+./gitignore
+
+C++/modern_c++/drive-*
+
+C++/Variadic_function
